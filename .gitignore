@@ -1,0 +1,6 @@
+*.env
+.idea/
+screenshots/
+app/app.pyc
+app/.cache/
+app/__pycache__/
