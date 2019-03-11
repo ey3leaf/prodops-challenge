@@ -1,8 +1,8 @@
 version: '3'
 services:
         app:
-                image: dops
-                container_name: dops
+                image: canichangeit/flask-app 
+                container_name: flask-app
                 ports:
                         - "5000:5000"
                 env_file:

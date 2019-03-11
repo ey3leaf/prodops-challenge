@@ -7,6 +7,6 @@ install:
         pip install -r requirements.txt
 script:
        - pytest
-       - echo $DOCKER_PASSWORD | docker login -p $DOCKER_USERNAME --password-stdin
-       - docker build -t canichangeit/flask-app:latest canichangeit/flask-app:$TRAVIS_BUILD_ID .
+       - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+       - docker build . -t canichangeit/flask-app:latest -t canichangeit/flask-app:$TRAVIS_BUILD_ID
        - docker push canichangeit/flask-app
