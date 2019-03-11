@@ -3,7 +3,8 @@ from boto3 import resource
 
 app = Flask(__name__)
 codename = 'thedoctor'
-github_path = 'https://github.com/prodopsio/devops-challenge'
+github_path = 'https://github.com/ey3leaf/prodops-challenge'
+container_path = 'https://cloud.docker.com/repository/docker/canichangeit/flask-app'
 
 
 @app.route('/')
@@ -18,7 +19,7 @@ def secret():
 
 @app.route('/health')
 def health():
-    res = {'status': 'healthy', 'project': github_path}
+    res = {'status': 'healthy', 'project': github_path, 'container': container_path}
     return jsonify(res)
 
 
