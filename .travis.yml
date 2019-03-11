@@ -1,14 +1,12 @@
 language: python
 python:
         - 3.6
-
+services:
+        - docker
 install:
         pip install -r requirements.txt
 script:
-        pytest
-
-services:
-        - docker
-
-after_install:
-        - docker build -t prodops/flask-app
+       - pytest
+       - echo $DOCKER_PASSWORD | docker login -p $DOCKER_USERNAME --password-stdin
+       - docker build -t canichangeit/flask-app:latest canichangeit/flask-app:$TRAVIS_BUILD_ID .
+       - docker push canichangeit/flask-app

@@ -8,4 +8,4 @@ The troubles beginned when I was trying to set ENV from the app itself:
  - When starting docker container with application, setting ENV variables fails and I still don't know why. 
 	That piece of code just don't work. I used '@app.before_first_request' decorator and locally it worked fine, but not in container.
 
- - Finally I discovered '.env' in docker-compose. That solved the problem.
+ - Fallback to simple '.env' in docker-compose. 
