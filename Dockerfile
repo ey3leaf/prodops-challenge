@@ -1,5 +1,5 @@
 FROM python:3.6
-
+MAINTAINER Igor Gnatyuk
 CMD ["mkdir", "/app"]
 
 WORKDIR /app
